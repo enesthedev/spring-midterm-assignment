@@ -1,11 +1,9 @@
 package com.medipol.h5210017.midterm.service;
 
-import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class StringService implements IStringService {
@@ -43,5 +41,21 @@ public class StringService implements IStringService {
         }
 
         return list;
+    }
+
+    @Override
+    public String findLongestWord(List<String> wordList) throws IllegalArgumentException {
+        if (wordList.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        /**
+         * In the previous question, we already divided the sentence into words,
+         * this time I am testing the static length property of the String class
+         * with the help of the Java Comparator with the help of stream.
+         * I also make sure that the incoming string is not empty.
+         */
+        return wordList.stream()
+                .max(Comparator.comparingInt(String::length))
+                .get();
     }
 }
