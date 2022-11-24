@@ -1,9 +1,11 @@
 package com.medipol.h5210017.midterm.service;
 
+import com.medipol.h5210017.midterm.model.FactorialNumber;
+
 import java.util.ArrayList;
 
 public interface INumberService {
-    Integer reverse(Integer number);
+    int reverse(Integer number);
 
-    Integer getRandomNumber(int start, int stop);
+    int getRandomNumber(int start, int stop);
 }
