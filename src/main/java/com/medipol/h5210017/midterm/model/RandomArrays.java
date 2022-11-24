@@ -8,6 +8,6 @@ import java.util.ArrayList;
 @AllArgsConstructor
 public class RandomArrays {
     @Getter int[] randomArray;
-    @Getter ArrayList<Integer> oddArray;
-    @Getter ArrayList<Integer> evenArray;
+    @Getter int[] oddArray;
+    @Getter int[] evenArray;
 }

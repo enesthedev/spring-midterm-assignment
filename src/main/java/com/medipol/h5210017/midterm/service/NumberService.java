@@ -22,7 +22,7 @@ public class NumberService implements INumberService {
     }
 
     @Override
-    public Integer getRandomNumber(int start, int stop) {
+    public int getRandomNumber(int start, int stop) {
         /**
          * With the help of the streamer, I create a virtual loop
          * and randomly draw lots in the number ranges given here,
