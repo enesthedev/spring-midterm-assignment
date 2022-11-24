@@ -1,6 +1,10 @@
 package com.medipol.h5210017.midterm.controller;
 
+import com.medipol.h5210017.midterm.model.FactorialNumber;
+import com.medipol.h5210017.midterm.model.FactorialResponse;
 import com.medipol.h5210017.midterm.model.RandomArrays;
+import com.medipol.h5210017.midterm.repository.FactorialRepository;
+import com.medipol.h5210017.midterm.service.FileService;
 import com.medipol.h5210017.midterm.service.NumberService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping("number")
 public class NumberController {
 
     private final NumberService numberService = new NumberService();
+    private final FileService fileService = new FileService();
 
     @GetMapping("reverse")
     public Integer reverse(@RequestParam("number") int number) {
@@ -60,5 +69,22 @@ public class NumberController {
         }
 
         return new RandomArrays(randomArray, oddArray, evenArray);
+    }
+
+    @GetMapping("factorial")
+    public FactorialResponse factorial(@RequestParam("number") int number) throws IOException {
+        numberService.factorial(number);
+        ArrayList<FactorialNumber> factorialNumbers = FactorialRepository.getFactorialNumbers();
+
+        String factorialString = "";
+
+        for (FactorialNumber factorialNumber : factorialNumbers) {
+            factorialString += factorialNumber.getResult() + "\n";
+        }
+
+        File factorialFile = fileService.create(
+                "src/main/resources/static/faktoriyel.txt", factorialString);
+
+        return new FactorialResponse("Success", factorialFile.getAbsolutePath());
     }
 }

@@ -1,5 +1,8 @@
 package com.medipol.h5210017.midterm.service;
 
+import com.medipol.h5210017.midterm.model.FactorialNumber;
+import com.medipol.h5210017.midterm.repository.FactorialRepository;
+
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -31,5 +34,24 @@ public class NumberService implements INumberService {
          */
         int[] randomNumbers = IntStream.iterate(start, n -> n + 1).limit(stop).toArray();
         return randomNumbers[new Random().nextInt(stop)];
+    }
+
+    @Override
+    public int factorial(Integer number) {
+        int result;
+        if (number == 0) {
+            result = 1;
+        } else {
+            result = (number * factorial(number - 1));
+        }
+
+        FactorialRepository.factorialNumbers
+                .add(new FactorialNumber(
+                                number.toString() + "!",
+                                result
+                        )
+                );
+
+        return result;
     }
 }

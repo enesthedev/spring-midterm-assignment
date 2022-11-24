@@ -8,4 +8,6 @@ public interface INumberService {
     int reverse(Integer number);
 
     int getRandomNumber(int start, int stop);
+
+    int factorial(Integer number);
 }
