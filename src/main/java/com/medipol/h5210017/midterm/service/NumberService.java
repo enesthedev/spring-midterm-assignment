@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 public class NumberService implements INumberService {
 
     @Override
-    public Integer reverse(Integer number) {
+    public int reverse(Integer number) {
         /**
          * I thought the easiest way I could create a reverse
          * for loop was to convert the incoming number to a string value.
