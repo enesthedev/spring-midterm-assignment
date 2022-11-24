@@ -4,4 +4,6 @@ import java.util.ArrayList;
 
 public interface INumberService {
     Integer reverse(Integer number);
+
+    Integer getRandomNumber(int start, int stop);
 }
