@@ -1,11 +1,11 @@
-package com.medipol.h5210017.midterm.service;
+package com.medipol.h5210017.midterm.service.file;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class FileService implements IFileService{
+public class FileServiceImpl implements FileService {
     @Override
     public File create(String path, String content) throws IOException {
 
