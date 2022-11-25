@@ -1,13 +1,16 @@
 package com.medipol.h5210017.midterm.service.math;
 
-import com.medipol.h5210017.midterm.model.RandomArrayResponse;
 import com.medipol.h5210017.midterm.util.MathUtil;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class MathServiceImpl implements MathService {
     @Override
-    public RandomArrayResponse random(int number) {
+    public ArrayList<int[]> random(int number) {
         int[] randomNumbers = new int[number];
         int oddNumberCount = 0, evenNumberCount = 0;
 
@@ -35,6 +38,6 @@ public class MathServiceImpl implements MathService {
             }
         }
 
-        return new RandomArrayResponse(randomNumbers, oddNumbers, evenNumbers);
+        return new ArrayList<int[]>(Arrays.asList(randomNumbers, oddNumbers, evenNumbers));
     }
 }

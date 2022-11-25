@@ -1,7 +1,8 @@
 package com.medipol.h5210017.midterm.service.math;
 
-import com.medipol.h5210017.midterm.model.RandomArrayResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public interface MathService {
-    RandomArrayResponse random(int number);
+    ArrayList<int[]> random(int number);
 }
