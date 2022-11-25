@@ -17,7 +17,7 @@ public class StringServiceImpl implements StringService {
     }
 
     @Override
-    public String findLongestWord(List<String> wordList) throws IllegalArgumentException {
+    public String longest(List<String> wordList) throws IllegalArgumentException {
         return StringUtil.findLongestWord(wordList);
     }
 }

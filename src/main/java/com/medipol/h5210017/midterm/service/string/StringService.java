@@ -5,5 +5,5 @@ import java.util.List;
 public interface StringService {
     List<String> split(String text, char separator);
 
-    String findLongestWord(List<String> wordList);
+    String longest(List<String> wordList);
 }
