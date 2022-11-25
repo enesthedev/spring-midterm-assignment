@@ -6,4 +6,6 @@ public interface StringService {
     List<String> split(String text, char separator);
 
     String longest(List<String> wordList);
+
+    String reverse(int number);
 }
