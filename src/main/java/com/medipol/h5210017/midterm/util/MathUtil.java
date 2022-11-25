@@ -1,7 +1,5 @@
 package com.medipol.h5210017.midterm.util;
 
-import com.medipol.h5210017.midterm.repository.FactorialRepository;
-
 import java.util.Random;
 import java.util.stream.IntStream;
 
