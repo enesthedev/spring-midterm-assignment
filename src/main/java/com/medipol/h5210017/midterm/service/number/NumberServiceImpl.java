@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class NumberServiceImpl implements NumberService {
 
     @Override
-    public String reverse(int number) {
+    public String reverse(long number) {
         String numberStr = String.valueOf(number);
         return StringUtil.reverse(numberStr);
     }

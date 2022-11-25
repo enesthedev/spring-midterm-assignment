@@ -18,7 +18,7 @@ public class NumberController {
     private NumberService numberServiceImpl;
 
     @GetMapping("reverse")
-    public BaseResponse reverse(@RequestParam("number") int number) {
+    public BaseResponse reverse(@RequestParam("number") long number) {
         String message = "%d sayısından %s sayısı oluşur."
                 .formatted(number, numberServiceImpl.reverse(number));
 

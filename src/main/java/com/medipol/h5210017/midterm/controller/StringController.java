@@ -31,7 +31,7 @@ public class StringController {
         String longest = stringService.longest(wordList);
 
         // I used a feature that came with Java 15 instead of advancing by adding old format String values to each other.
-        String message = "'%s' cümlesindeki en uzun kelime '%s' ve bu kelime %d uzunluğundadır."
+        String message = "'%s' cümlesindeki en uzun kelime '%s' ve bu kelime %d karakter uzunluğundadır."
                 .formatted(
                         text,
                         longest,
