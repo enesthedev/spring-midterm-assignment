@@ -1,10 +1,12 @@
 package com.medipol.h5210017.midterm.repository;
 
-import com.medipol.h5210017.midterm.model.FactorialNumber;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 
+@NoArgsConstructor
 public class FactorialRepository {
-    @Getter public static ArrayList<FactorialNumber> factorialNumbers = new ArrayList<FactorialNumber>();
+    @Getter @Setter public ArrayList<Integer> factorialNumbers = new ArrayList<Integer>();
 }

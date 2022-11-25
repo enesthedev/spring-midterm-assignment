@@ -4,7 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public class FactorialNumber {
-    @Getter String factorial;
-    @Getter int result;
+@Getter
+public class RandomArray {
+
+    int[] randomNumbers;
+    int[] oddNumbers;
+    int[] evenNumbers;
 }
