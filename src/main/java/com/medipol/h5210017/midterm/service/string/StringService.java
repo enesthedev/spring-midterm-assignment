@@ -1,10 +1,8 @@
-package com.medipol.h5210017.midterm.service;
+package com.medipol.h5210017.midterm.service.string;
 
-import java.util.Dictionary;
 import java.util.List;
-import java.util.Map;
 
-public interface IStringService {
+public interface StringService {
     List<String> split(String text, char separator);
 
     String findLongestWord(List<String> wordList);
