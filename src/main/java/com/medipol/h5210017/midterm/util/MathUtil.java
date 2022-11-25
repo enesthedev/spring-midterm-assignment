@@ -13,7 +13,7 @@ public class MathUtil {
         return randomNumbers[new Random().nextInt(stop)];
     }
 
-    public static int factorial(Integer number) {
+    public static int factorial(int number) {
         int result;
         if (number == 0) {
             result = 1;
@@ -21,5 +21,9 @@ public class MathUtil {
             result = (number * factorial(number - 1));
         }
         return result;
+    }
+
+    public static boolean isOdd(int number) {
+        return !(number % 2 == 0);
     }
 }
