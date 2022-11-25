@@ -1,9 +1,10 @@
 package com.medipol.h5210017.midterm.service.math;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.medipol.h5210017.midterm.model.RandomArray;
 
 public interface MathService {
-    ArrayList<int[]> random(int number);
+    RandomArray random(int number);
     String factorial(int number);
+
+    String cone(int r, int h);
 }

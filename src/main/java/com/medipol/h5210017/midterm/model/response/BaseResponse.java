@@ -1,12 +1,13 @@
-package com.medipol.h5210017.midterm.model;
+package com.medipol.h5210017.midterm.model.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
+@Getter
 public class BaseResponse {
-    @Getter String message;
-    @Getter int code;
+    String message;
+    int code;
 }

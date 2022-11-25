@@ -33,4 +33,8 @@ public class MathUtil {
     public static boolean isOdd(int number) {
         return !(number % 2 == 0);
     }
+
+    public static double findConeVolume(int r, int h) {
+        return (Math.PI *  (Math.pow(r, 2)) * h) / 3 ;
+    }
 }

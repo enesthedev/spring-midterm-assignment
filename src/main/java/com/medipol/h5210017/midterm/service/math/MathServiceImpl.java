@@ -1,27 +1,23 @@
 package com.medipol.h5210017.midterm.service.math;
 
+import com.medipol.h5210017.midterm.model.RandomArray;
 import com.medipol.h5210017.midterm.repository.FactorialRepository;
-import com.medipol.h5210017.midterm.service.math.file.MathFileService;
+import com.medipol.h5210017.midterm.util.Constants;
+import com.medipol.h5210017.midterm.util.FileUtil;
 import com.medipol.h5210017.midterm.util.MathUtil;
-import com.medipol.h5210017.midterm.util.StringUtil;
-import com.medipol.h5210017.midterm.util.constant.MathServiceConstant;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Service
 public class MathServiceImpl implements MathService {
 
-    @Autowired
-    private MathFileService mathFileServiceImpl;
-
     @Override
-    public ArrayList<int[]> random(int number) {
+    public RandomArray random(int number) {
         int[] randomNumbers = new int[number];
         int oddNumberCount = 0, evenNumberCount = 0;
 
@@ -49,12 +45,12 @@ public class MathServiceImpl implements MathService {
             }
         }
 
-        return new ArrayList<int[]>(Arrays.asList(randomNumbers, oddNumbers, evenNumbers));
+        return new RandomArray(randomNumbers, oddNumbers, evenNumbers);
     }
 
     @Override
     public String factorial(int number) {
-        String status = MathServiceConstant.FILE_SUCCESS;
+        String status = Constants.SUCCESS_MESSAGE;
 
         StringBuilder stringBuilder = new StringBuilder();
         FactorialRepository factorialRepository = new FactorialRepository();
@@ -71,13 +67,25 @@ public class MathServiceImpl implements MathService {
         String factorialString = stringBuilder.toString();
 
         try {
-            File factorialFile = mathFileServiceImpl.create("src/main/resources/static/faktoriyel.txt", factorialString);
+            File factorialFile = FileUtil.create("src/main/resources/static/faktoriyel.txt");
+            FileUtil.write(factorialFile, factorialString);
+
             return "%s - %s".formatted(status, factorialFile.getAbsolutePath());
 
         } catch (IOException e) {
-            status = MathServiceConstant.FILE_ERROR;
+            status = Constants.ERROR_MESSAGE;
         }
 
         return "%s - %s".formatted(status, "");
+    }
+
+    @Override
+    public String cone(int r, int h) {
+        double coneVolume = MathUtil.findConeVolume(r, h);
+
+        DecimalFormat decimalFormat = new DecimalFormat("##.##");
+        decimalFormat.setRoundingMode(RoundingMode.HALF_UP);
+
+        return decimalFormat.format(coneVolume);
     }
 }
