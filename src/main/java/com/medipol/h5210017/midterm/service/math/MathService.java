@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface MathService {
     ArrayList<int[]> random(int number);
+    String factorial(int number);
 }

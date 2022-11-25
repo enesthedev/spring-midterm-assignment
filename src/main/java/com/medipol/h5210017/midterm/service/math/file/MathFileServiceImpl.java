@@ -1,14 +1,13 @@
-package com.medipol.h5210017.midterm.service.file;
+package com.medipol.h5210017.midterm.service.math.file;
 
 import com.medipol.h5210017.midterm.util.FileUtil;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
-public class FileServiceImpl implements FileService {
+@Service
+public class MathFileServiceImpl implements MathFileService {
 
     @Override
     public File create(String path, String content) throws IOException {

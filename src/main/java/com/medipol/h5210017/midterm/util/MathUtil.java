@@ -1,5 +1,7 @@
 package com.medipol.h5210017.midterm.util;
 
+import com.medipol.h5210017.midterm.repository.FactorialRepository;
+
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -13,13 +15,18 @@ public class MathUtil {
         return randomNumbers[new Random().nextInt(stop)];
     }
 
-    public static int factorial(int number) {
+    public static int factorial(int number, FactorialRepository factorialRepository) {
         int result;
         if (number == 0) {
             result = 1;
         } else {
-            result = (number * factorial(number - 1));
+            result = (number * factorial(number - 1, factorialRepository));
         }
+
+        if (factorialRepository != null) {
+            factorialRepository.factorialNumbers.add(result);
+        }
+
         return result;
     }
 

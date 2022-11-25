@@ -31,4 +31,9 @@ public class MathController {
 
         return new RandomArrayResponse(randomNumbers, oddNumbers, evenNumbers);
     }
+
+    @GetMapping("factorial")
+    public String factorial(@RequestParam("number") int number) {
+        return mathServiceImpl.factorial(number);
+    }
 }
