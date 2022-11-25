@@ -20,11 +20,4 @@ public class StringServiceImpl implements StringService {
     public String longest(List<String> wordList) throws IllegalArgumentException {
         return StringUtil.findLongestWord(wordList);
     }
-
-    @Override
-    public String reverse(int number) {
-        String numberStr = String.valueOf(number);
-
-        return StringUtil.reverse(numberStr);
-    }
 }
