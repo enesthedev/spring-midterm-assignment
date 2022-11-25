@@ -2,7 +2,6 @@ package com.medipol.h5210017.midterm.controller;
 
 import com.medipol.h5210017.midterm.model.BaseResponse;
 import com.medipol.h5210017.midterm.service.string.StringService;
-import com.medipol.h5210017.midterm.service.string.StringServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
