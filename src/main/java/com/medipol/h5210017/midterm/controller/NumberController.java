@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class NumberController {
 
     @Autowired
-    private NumberService numberServiceImpl;
+    private NumberService numberService;
 
     @GetMapping("reverse")
     public BaseResponse reverse(@RequestParam("number") long number) {
         String message = "%d sayısından %s sayısı oluşur."
-                .formatted(number, numberServiceImpl.reverse(number));
+                .formatted(number, numberService.reverse(number));
 
         return new BaseResponse(message, 200);
     }

@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class MathController {
 
     @Autowired
-    private MathService mathServiceImpl;
+    private MathService mathService;
 
     @GetMapping("array/create/random")
     public RandomArrayResponse random(@RequestParam("number") int number) {
-        RandomArray arrays = mathServiceImpl.random(number);
+        RandomArray arrays = mathService.random(number);
 
         /*  Unfortunately, I couldn't find a way to move integer size values with less resources,
             I'm waiting for your suggestions. You can also help the code by sending a Pull Request. */
@@ -30,11 +30,11 @@ public class MathController {
 
     @GetMapping("factorial")
     public BaseResponse factorial(@RequestParam("number") int number) {
-        return new BaseResponse(mathServiceImpl.factorial(number), 200);
+        return new BaseResponse(mathService.factorial(number), 200);
     }
 
     @GetMapping("cone")
     public BaseResponse cone(@RequestParam("r") int r, @RequestParam("h") int h) {
-        return new BaseResponse(mathServiceImpl.cone(r, h), 200);
+        return new BaseResponse(mathService.cone(r, h), 200);
     }
 }
