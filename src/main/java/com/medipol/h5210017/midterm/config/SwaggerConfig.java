@@ -6,6 +6,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -28,6 +29,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Midterm Webservice")
                 .description("The Webservice of Midterm Application requested from the lecturer of Medipol University named as Serkan İşleyen")
+                .contact(new Contact("Enes Bayraktar", "https://www.linkedin.com/enesbayraktar", "enes.bayraktar@outlook.com.tr"))
                 .version("1")
                 .build();
     }
