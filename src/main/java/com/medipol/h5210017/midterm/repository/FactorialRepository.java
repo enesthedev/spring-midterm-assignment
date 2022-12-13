@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 @NoArgsConstructor
 public class FactorialRepository {
-    @Getter @Setter public ArrayList<Integer> factorialNumbers = new ArrayList<Integer>();
+    @Getter @Setter public ArrayList<BigInteger> factorialNumbers = new ArrayList<BigInteger>();
 }
