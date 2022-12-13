@@ -2,6 +2,7 @@ package com.medipol.h5210017.midterm.util;
 
 import com.medipol.h5210017.midterm.repository.FactorialRepository;
 
+import java.math.BigInteger;
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -15,12 +16,12 @@ public class MathUtil {
         return randomNumbers[new Random().nextInt(stop)];
     }
 
-    public static int factorial(int number, FactorialRepository factorialRepository) {
-        int result;
+    public static BigInteger factorial(int number, FactorialRepository factorialRepository) {
+        BigInteger result;
         if (number == 0) {
-            result = 1;
+            result = BigInteger.valueOf(1);
         } else {
-            result = (number * factorial(number - 1, factorialRepository));
+            result = BigInteger.valueOf(number).multiply(factorial(number - 1, factorialRepository));
         }
 
         if (factorialRepository != null) {

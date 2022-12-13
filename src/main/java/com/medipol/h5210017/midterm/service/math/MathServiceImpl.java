@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -57,9 +58,9 @@ public class MathServiceImpl implements MathService {
 
         MathUtil.factorial(number, factorialRepository);
 
-        ArrayList<Integer> factorialNumbers = factorialRepository.getFactorialNumbers();
+        ArrayList<BigInteger> factorialNumbers = factorialRepository.getFactorialNumbers();
 
-        for (Integer result: factorialNumbers) {
+        for (BigInteger result: factorialNumbers) {
             stringBuilder.append(result)
                     .append("\n");
         }
