@@ -11,7 +11,7 @@ public class StringUtil {
             of the process supported by Java. I didn't want to use
             a ready-made method. */
 
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
@@ -55,7 +55,11 @@ public class StringUtil {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = string.length() - 1; i >= 0; i--) {
-            stringBuilder.append(string.charAt(i));
+            char w = string.charAt(i);
+            if (w == 48 && stringBuilder.length() == 0) { // This is for number-safety responses for example before 1240 0421 after 1240 421
+                continue;
+            }
+            stringBuilder.append(w);
         }
 
         return stringBuilder.toString();
