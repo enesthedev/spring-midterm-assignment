@@ -1,7 +1,7 @@
 <p align="right"><a href="https://github.com/enesthedev/spring-midterm-assignment/blob/master/README_TR.md" title="Bu sayfayı Türkçe olarak görüntüle" target="_blank"><img height="20" src="https://github.com/enesthedev/art/blob/master/see-at-turkish.ico"/></a></p>
 
 # Spring Boot Midterm Assignment
-Midterm assignment given from Serkan İŞLEYEN
+Midterm assignment given from Serkan İŞLEYEN.
 
 ### Requirements
 
